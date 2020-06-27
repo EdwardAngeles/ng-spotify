@@ -52,7 +52,7 @@ export class SpotifyService {
   }
   
   generateHttpOptions() {
-    return this.http.get(`http://spotify-get-token.herokuapp.com/spotify/${CLIENT_ID}/${CLIENT_SECRET}`).pipe(map((spotifyResp: any) => {
+    return this.http.get(`https://spotify-get-token.herokuapp.com/spotify/${CLIENT_ID}/${CLIENT_SECRET}`).pipe(map((spotifyResp: any) => {
       
       return {headers: new HttpHeaders({'Authorization': `Bearer ${spotifyResp['access_token']}`})};
       
