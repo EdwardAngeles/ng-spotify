@@ -1,0 +1,11 @@
+<div class="mt-5 mb-5">
+  <h2 class=" text-center animate__animated animate__fadeIn animate__faster">
+    <i class="fas fa-fire"></i> Here is a list of new releases.
+  </h2>
+</div>
+
+<div class="mt-5">
+  <app-loading *ngIf="loading"></app-loading>
+</div>
+
+<app-cards [items]="newReleases"></app-cards>

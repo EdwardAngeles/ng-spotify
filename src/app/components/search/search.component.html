@@ -1,0 +1,24 @@
+<div class="mt-4"></div>
+
+<div class="row mb-3">
+  <div class="col">
+    <input #term type="text" (keyup)="onType(term.value)" class="form-control" placeholder="Search Artist">
+  </div>
+</div>
+
+<app-loading *ngIf="loading"></app-loading>
+
+<app-cards *ngIf="!loading" [items]="artists"></app-cards>
+
+<div *ngIf="!loading && term.value.trim() === '' && artists.length === 0" class="mt-5">
+  <h2 class=" text-center animate__animated animate__fadeIn animate__faster">
+    <i class="fas fa-quote-left"></i> Type an artist name on the search bar.
+  </h2>
+</div>
+
+<span *ngIf="!loading && term.value.trim() !== '' && artists.length === 0">
+  <div class="alert alert-secondary animate__animated animate__fadeIn animate__faster" role="alert">
+    <h4 class="alert-heading"><i class="fas fa-exclamation-circle"></i> Nothing Found</h4>
+    <p>Sorry, we couln't find any results matching "{{ term.value.trim() }}".</p>
+  </div>
+</span>
