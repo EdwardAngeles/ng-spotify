@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'artists/:id', component: ArtistComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: '**', redirectTo: '' }
+  { path: '**', pathMatch: 'full', redirectTo: '' }
 ];
 
 @NgModule({
